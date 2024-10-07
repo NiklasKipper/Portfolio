@@ -1,0 +1,442 @@
+
+
+
+:root{
+    --base-color:rgb(235, 235, 235);
+    --base-variant: rgb(192, 192, 192);
+    --name-color: rgb(0, 0, 0);
+    --navbar-color:rgb(78, 78, 78);
+    --sidebar-color:rgb(182, 182, 182);
+    --modeswitch-color: rgba(128, 128, 128, 0.336);
+    --text-color: rgb(0, 0, 0);
+    --calculator-color:rgba(102, 102, 102, 0.842);
+    --calculatorKeys-color:rgb(255, 255, 255);
+    
+}
+.darkmode{
+    --base-color:hsla(0, 0%, 10%);
+    --base-variant: rgb(202, 202, 202);
+    --name-color: rgb(255, 255, 255);
+    --navbar-color:rgb(179, 179, 179);
+    --sidebar-color:rgb(37, 37, 37);
+    --modeswitch-color: rgb(197, 197, 197);
+    --text-color: rgba(255, 255, 255, 0.781);
+    --calculator-color:rgb(90, 90, 90);
+    --calculatorKeys-color:rgb(185, 185, 185);
+}
+
+*{
+    margin:0;
+    padding:0;
+    
+}
+body{
+    margin:0;
+    background-color: var(--base-color);
+    font-family: "Open Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 100;
+    font-style: normal;
+    overflow-x:hidden;
+    transition:0.5s;
+   
+    
+}
+html{ 
+    scroll-behavior: smooth;
+   
+}
+
+#theme-switch{
+    position:fixed;
+    bottom:0%;
+    left:100%;
+    transform:translate(-110%, -10%);
+    justify-content: center;
+    display:flex;
+    align-items:center;
+    border:none;
+    height: 50px;
+    width: 50px;
+    border-radius:50%;
+    cursor:pointer;
+    background-color:var(--modeswitch-color);
+    z-index:100
+
+    
+}
+#theme-switch svg{
+    fill:var(--primary-color);
+}
+
+#theme-switch svg:last-child{
+    display:none;
+}
+.darkmode #theme-switch svg:first-child{
+    display: none;
+}
+.darkmode #theme-switch svg:last-child{
+    display:block;
+}
+.name{
+    font-family: "Dancing Script";
+    font-optical-sizing: auto;
+    font-weight: 100;
+    font-style: normal;
+    font-size:6em;
+    color:var(--name-color);  
+}
+.name:hover{
+    cursor:default
+}
+nav{
+    background-color:transparent;
+}
+nav ul{
+    width:95%;
+    list-style:none;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:5%
+}
+
+nav li{
+    height:200px;
+}
+nav a{
+    height:100%;
+    padding: 0px 30px;
+    text-decoration:none;
+    display:flex;
+    align-items: center;
+    color:var(--navbar-color);
+    font-size:3rem;
+    text-decoration: none;
+}
+
+
+nav li:first-child{
+    margin-right:auto;
+    margin-left:1vw;
+    text-decoration:none;
+}
+.sidebar{
+    position:fixed;
+    top:0%;
+    right:-70vw;
+    height:100%;
+    width:fit-content;
+    z-index:999;
+    background-color: var(--sidebar-color);
+    display:flex;
+    flex-direction:column;
+    align-items:flex-start;
+    justify-content: flex-start;
+    transition:0.5s
+
+}
+.overlay{
+    position:fixed;
+    right:100%;
+    background-color:transparent;
+    width:100vw;
+    height:100vh;
+    z-index:1
+
+
+}
+.sidebar li{
+    width:100%;
+}
+
+.menu-button{
+    display:none;
+}
+.webcontainer{
+    position:absolute;
+    display:grid;
+    height:min-content;
+    width:100vw;
+    z-index:-10;
+}
+.container{
+    position:relative;
+    width:100%;
+    min-height:95vh;
+    top:40%;
+    left:50%;
+    transform:translate(-50%, -50%);
+    display:grid;
+    z-index:-1;
+    }
+.content{
+    position:relative;
+    top:-30%;
+    width:100%;
+    height:40%;
+    transform:translate(-50%);
+    left:50%;
+    text-align:center;
+    display:flex;
+    flex-direction: column;
+    color:var(--text-color);
+    top:0vh;
+    
+}
+
+.foto{
+    margin:auto;
+    width:30%;
+    border-radius:50%;
+}
+
+h1{
+    color:var(--navbar-color);
+    font-size:clamp(2vw, 1vw + 0.5rem , 4rem);
+    gap:10%;
+}
+h2{
+    color:var(--name-color);
+    font-size:clamp(5vw, 1vw + 0.5rem , 10rem);
+}
+.projectContainer{
+    width:100vw;
+    height:100vh;
+    position:relative;
+    display:flex;
+    align-items:center;
+    justify-content: center;
+    gap:4vw;
+    text-align:center;
+    font-size:4vw;
+    color:var(--navbar-color);
+    
+
+    
+
+}
+h3{
+    color:var(--navbar-color);
+    position:absolute;
+    left:50%;
+    transform:translate(-50%, 0%);
+    font-size:8vw;
+
+ 
+}
+
+.calculatorBox{
+    width:25vw;
+    height:30vw;
+    top:20vh;
+    background-color:transparent;
+    position:relative;
+    border-radius:3vw;
+    border:solid .2vh var(--navbar-color);
+    font-size:3vw;
+    
+    
+
+}
+.calculator{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%, -50%);
+    width:70%;
+    min-height:auto;
+    background:var(--calculator-color);
+    border-radius:1vw;
+    
+}
+.display{
+    position:relative;
+    width:100%;
+    height: 3vw;
+    border-radius:1vw 1vw 0.3vw 0.3vw ;
+    display:grid;
+    background:rgba(165, 165, 165, 0.548);
+    border-bottom:solid 0.1vw rgb(110, 110, 110) ;
+}
+input{
+    justify-content: center;
+    text-indent:1vw;
+    font-size:1.5vw;
+    outline:none;
+    border:none;
+    cursor:auto;
+    
+}
+.keys{
+    display:grid;
+    grid-template-columns:repeat(4, 1fr);
+    padding:0.5vh 0.4vw;
+    gap:0.5vw;
+    
+    
+}
+#calculatorButton{
+    padding: 0.7vw 0;
+    width:auto;
+    height: auto;
+    border:none;
+    font-size:1vw;
+    border-radius:1vw;
+    user-select: none;
+}
+.operator-btn{
+    background-color:orange;
+}
+.nooperator-btn{
+    background-color:rgb(189, 189, 189);
+}
+.nooperator-btn:hover{
+    background-color:hsl(0, 0%, 73%);
+
+}
+.nooperator-btn:active{
+    background-color:hsl(0, 0%, 63%);
+}
+.operator-btn:hover{
+    background-color:hsl(35, 100%, 65%);
+}
+.operator-btn:active{
+    background-color:hsl(35, 100%, 75%);
+}
+.snakeBox{
+    width:25vw;
+    height:30vw;
+    top:20vh;
+    background-color:transparent;
+    position:relative;
+    border-radius:3vw;
+    border:solid .2vh var(--navbar-color);
+    font-size:3vw;
+}
+#score{
+    position:absolute;
+    top:13%;
+    left:50%;
+    transform:translate(-50%, -50%);
+    font-size:2vw;
+    font-weight:bold;
+    color:var(--navbar-color);
+}
+#canvas{
+    width:70%;
+    height:50%;
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%, -50%);
+}
+.quizBox{
+    width:25vw;
+    height:30vw;
+    top:20vh;
+    background-color:transparent;
+    position:relative;
+    border-radius:3vw;
+    border:solid .2vh;
+    font-size:3vw;
+}
+#flag{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%, -50%);
+    height: 10vw;
+    width:15vw
+   
+}
+#country-input{
+    position:absolute;
+    top:85%;
+    left:50%;
+    transform:translate(-50%, -50%);
+    width: 80%;
+    height: 10%;
+    border-radius:100px;
+    background:transparent;
+    border:solid 1px var(--navbar-color);
+    color:var(--name-color);
+    font-size:fit-content;
+    text-align:center;
+
+
+}
+h4{
+    font-size:2vw;
+}
+#score{
+    top:18%;
+}
+#message{
+    font-size:1vw;
+}
+.aboutmeContainer{
+    width:100vw;
+    min-height:100rem;
+    position:relative;
+}
+
+.pText{
+    position:relative;
+    font-size:clamp(0.2rem, 1vw + 1rem, 3rem);
+    left:50%;
+    top:20%;
+    width:60%;
+    text-align:justify;
+    line-break:auto;
+    transform:translate(-50%, 0%);
+    color:var(--text-color);
+    border-radius:50px;
+}
+
+h6{
+    color:var(--navbar-color);
+    position:absolute;
+    left:50%;
+    transform:translate(-50%, 0%);
+    font-size:8vw;
+
+}
+
+.contactContainer{
+    width:100vw;
+    min-height:50vw;
+    position:relative;
+    display:flex;
+    align-items:center;
+    justify-content: center;
+    text-align:center;
+    font-size:3vw;
+    color:var(--navbar-color);
+    
+    
+}
+.contact{
+    color:var(--navbar-color);
+    position:absolute;
+    left:50%;
+    top:10vh;
+    transform:translate(-50%, 0%);
+    font-size:8vw;
+}
+.mail{
+    position:absolute;
+    left:50%;
+    transform:translate(-50%, 0%);
+    top:60%;
+    padding:2%;
+    border:solid 0.1em var(--navbar-color);
+    border-radius: 40px;
+    text-decoration: none;
+    color:var(--text-color)
+    
+}
+.kontaktieren{
+    color:var(--name-color);
+    text-decoration: none;
+}

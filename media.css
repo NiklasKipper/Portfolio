@@ -1,0 +1,154 @@
+@media (max-width:1300px){
+    .menu-button{
+        display:block;
+
+    }
+    .hideOnMobile{
+        display:none;
+    }
+    .name{
+        font-size:2.5em;
+    }
+    nav li{
+        height:100px;
+    }
+    nav ul{
+        gap:2%
+    }
+    
+
+}
+@media(max-width:800px){
+    .contactContainer{
+        width:100vw;
+        min-height:60vw;
+        top:190%;
+        position:relative;
+        display:flex;
+        align-items:center;
+        justify-content: center;
+        text-align:center;
+        font-size:3vw;
+        color:var(--navbar-color);
+        
+        
+    }
+    .projectContainer{
+        top:10%;
+        display:grid;
+        width:100vw;
+        
+        
+    }
+    .calculatorBox{
+        top:10%;
+        width:40vw;
+        height:70vw;
+       
+    }
+    .calculator{
+        position:absolute;
+        top:50%;
+        left:50%;
+        transform:translate(-50%, -50%);
+        width:40%;
+        border-radius:1vw;
+    }
+    .snakeBox{
+        top:10%;
+        width:40vw;
+        height:70vw;
+       
+    }
+    .quizBox{
+        top:10%;
+        width:40vw;
+        height:70vw;
+       
+    }
+}
+@media (max-width:600px){
+    .contactContainer{
+        width:100vw;
+        min-height:60vw;
+        top:150%;
+        position:relative;
+        display:flex;
+        align-items:center;
+        justify-content: center;
+        text-align:center;
+        font-size:3vw;
+        color:var(--navbar-color);
+        
+        
+    }
+}
+@media (max-width:500px){
+    .contactContainer{
+        width:100vw;
+        min-height:70vw;
+        top:170%;
+        position:relative;
+        display:flex;
+        align-items:center;
+        justify-content: center;
+        text-align:center;
+        font-size:3vw;
+        color:var(--navbar-color);
+    }
+    h3{
+        top:70%;
+    }
+    .projectContainer{
+        top:50%;
+    }
+    .sidebar{
+        width:80%;
+        right:-100%
+    }
+    nav ul{
+        gap:1%
+    }
+}
+@media (max-width:400px){
+    .contactContainer{
+        width:100vw;
+        min-height:80vw;
+        top:210%;
+        position:relative;
+        display:flex;
+        align-items:center;
+        justify-content: center;
+        text-align:center;
+        font-size:3vw;
+        color:var(--navbar-color);
+    }
+}
+@media(max-width:380px){
+    h3{
+        top:75%
+    }
+}
+@media(max-width:340px){
+    nav a {
+        font-size:2rem;
+    }
+    nav ul{
+        gap:0%
+    }
+    .projectContainer{
+        top:40%;
+    }
+    h3{
+        top:75%;
+    }
+}
+
+@media(max-width:250px){
+    .projectContainer{
+        top:50%;
+    }
+    h3{
+        top:80%
+    }
+}
